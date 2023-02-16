@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 46a2a84fab4176949b2f04777ede81cf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - heartPrefab: {fileID: 4808779807944668411, guid: 3493ff7225db2b440b8a81307014fce1, type: 3}
+  - CoinPrefab: {fileID: 7107880358112632581, guid: af338242ef6c2094b99121aba27beeec, type: 3}
+  - effectPos: {instanceID: 0}
+  - target: {instanceID: 0}
+  - boxCollider: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
