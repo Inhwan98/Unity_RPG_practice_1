@@ -11,11 +11,9 @@ public class HealthBar : MonoBehaviour
     [HideInInspector]
     public Player character;
     public Image meterImage;
-
     public Text hpText;
 
     float maxHitPoints;
-
 
     private void Start()
     {
@@ -31,7 +29,6 @@ public class HealthBar : MonoBehaviour
             //value값을 maxhitPoints로 나눈다.
             //fillAmount 최대값이 1이기 때문에 소수점으로 만들어 줘야 한다.
             meterImage.fillAmount = hitPoints.value / maxHitPoints; // value가 10이므로 0.1
-
 
             //표시되는 HP값은 100을 곱해서 세 자리수로 확인한다.
             hpText.text = "HP :" + (meterImage.fillAmount * 100);

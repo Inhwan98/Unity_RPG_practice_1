@@ -184,8 +184,6 @@ public class Enemy : MonoBehaviour
         //Physics.SphereCastAll:
         //위치, (구체)반지름, 방향, 구체범위, 구체의 들어온 레이어판별
 
-       
-
         if (rayHits.Length > 0 && !isAttack)
         {
             ChaseStart();

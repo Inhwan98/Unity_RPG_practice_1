@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
     public GameObject swordwave;
     [SerializeField]
     private SwordWave waveScript;
+
+    //Ã¼·Â¹Ù
     public HealthBar healthBarPrefab;
     [HideInInspector]
     public HealthBar healthBar;
@@ -209,8 +211,6 @@ public class Player : MonoBehaviour
         }
         else
             audioSrc.Stop();
-
-
     }
 
     public void Turn()
@@ -258,10 +258,8 @@ public class Player : MonoBehaviour
     }
     IEnumerator Attack(float time)
     {
-
         if (!isAimSet && fInput && runtime > weapon.rate && !isSwing && !isDead)
         {
-
             float AttackDelay = 1.0f;
             firecount += 1;
 

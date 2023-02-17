@@ -20,6 +20,4 @@ public class SwordWave : MonoBehaviour
         rigid.velocity = transform.forward * speed * Time.deltaTime;
         Destroy(gameObject, 1f);
     }
-
-
 }
