@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SwordWave : MonoBehaviour
 {
-
     public float speed;
+
+    [HideInInspector]
     public int waveDamage;
+    [HideInInspector]
     public float waveRate;
     Rigidbody rigid;
 
