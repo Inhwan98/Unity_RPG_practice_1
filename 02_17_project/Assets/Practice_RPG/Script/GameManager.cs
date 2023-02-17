@@ -17,6 +17,14 @@ public class GameManager : MonoBehaviour
     public Text ScoreText;
     public Transform startPoint;
     private bool isGameOver; //게임오버 상태
+    public bool IsGameOver
+    {
+        get => isGameOver;
+        set
+        {
+            isGameOver = value;
+        }
+    }
 
     // Start is called before the first frame update
     private void Awake()
@@ -38,13 +46,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        isGameOver = false;
+        IsGameOver = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isGameOver)
+        if (!IsGameOver)
         {
             ScoreText.text = "Score : " + player.AmountCoin;
         }
@@ -62,7 +70,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         //현재 상태를 게임오버 상태로 전환
-        isGameOver = true;
+        IsGameOver = true;
 
         SceneManager.LoadScene("GameEnd");
 

@@ -269,8 +269,6 @@ public class BossEnemy : MonoBehaviour
         {
             GameManager gameManager = FindObjectOfType<GameManager>();
             gameManager.EndGame();
-
-            SceneManager.LoadScene("GameEnd");
         }
     }
 
@@ -280,7 +278,7 @@ public class BossEnemy : MonoBehaviour
         ChaseEnd();
         gameObject.layer = 8;
         isDie = true;
-        Destroy(this.gameObject, 2f);
+        Destroy(this.gameObject);
         Destroy(bossHealthBar.gameObject);
     }
 

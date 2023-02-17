@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
+    public static InventoryUI instance = null;
+
     Inventory inven;
+    GameManager gmr;
 
     public GameObject inventoryPanel;
     bool activeInventory = false;
@@ -13,9 +16,21 @@ public class InventoryUI : MonoBehaviour
     public Slot[] slots;
     public Transform slotHolder;
 
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Start()
     {
         inven = Inventory.instance;
+        gmr = GameManager.instance;
         slots = slotHolder.GetComponentsInChildren<Slot>();
         inven.onSlotCountChange += SlotChange;
         inventoryPanel.SetActive(activeInventory);
@@ -50,6 +65,10 @@ public class InventoryUI : MonoBehaviour
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }
+        }
+        if(gmr.IsGameOver)
+        {
+            Destroy(gameObject);
         }
     }
 
