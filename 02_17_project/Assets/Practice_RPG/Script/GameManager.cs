@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerObj;
     [SerializeField]
     private Player player;
+    private BossEnemy bossEnemy;
     public Text ScoreText;
     public Transform startPoint;
     private bool isGameOver; //게임오버 상태
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
         #endregion
 
         player = FindObjectOfType<Player>();
+        bossEnemy = FindObjectOfType<BossEnemy>();
     }
 
     void Start()
@@ -64,7 +66,7 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("GameEnd");
 
-        
+        bossEnemy.DestoryBoss();
         player.DestroyPlayer();
     }
 }

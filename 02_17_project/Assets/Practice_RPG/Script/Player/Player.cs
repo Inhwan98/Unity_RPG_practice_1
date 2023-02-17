@@ -483,21 +483,21 @@ public class Player : MonoBehaviour
 
         if (curHitPoints <= 0)
         {
-            ani.SetTrigger("doDead");
-            isDead = true;
-
             //씬에 존재하는 GameManager 타입의 오브젝트 찾아서 가져오기
             //메모리 다소 잡아먹나?
             GameManager gameManager = FindObjectOfType<GameManager>();
             gameManager.EndGame();
 
-            gameObject.layer = 10;
+            
             yield return new WaitForSeconds(2.0f);
         }
     }
 
     public void DestroyPlayer()
     {
+        ani.SetTrigger("doDead");
+        isDead = true;
         Destroy(this.gameObject);
+        gameObject.layer = 10;
     }
 }

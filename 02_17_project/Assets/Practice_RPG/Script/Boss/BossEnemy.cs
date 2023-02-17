@@ -267,18 +267,21 @@ public class BossEnemy : MonoBehaviour
         }
         else
         {
-            ani.SetTrigger("Die");
-            ChaseEnd();
-            gameObject.layer = 8;
-            isDie = true;
-            Destroy(gameObject, 2f);
-            Destroy(bossHealthBar.gameObject);
-
             GameManager gameManager = FindObjectOfType<GameManager>();
             gameManager.EndGame();
 
             SceneManager.LoadScene("GameEnd");
         }
+    }
+
+    public void DestoryBoss()
+    {
+        ani.SetTrigger("Die");
+        ChaseEnd();
+        gameObject.layer = 8;
+        isDie = true;
+        Destroy(this.gameObject, 2f);
+        Destroy(bossHealthBar.gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
