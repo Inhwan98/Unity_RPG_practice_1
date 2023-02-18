@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     public float speed = 10f;
+    [HideInInspector]
     public float fireDamage;
     private Rigidbody fireRigid;
     // Start is called before the first frame update
