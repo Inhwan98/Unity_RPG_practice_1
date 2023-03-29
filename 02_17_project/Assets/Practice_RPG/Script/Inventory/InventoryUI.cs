@@ -59,11 +59,14 @@ public class InventoryUI : MonoBehaviour
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                inven.isUseInven = true;
             }
             else
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+                inven.isUseInven = false;
+
             }
         }
         if(gmr.IsGameOver)

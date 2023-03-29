@@ -14,12 +14,16 @@ public class SwordWave : MonoBehaviour
 
     private void Awake()
     {
-        rigid = GetComponent<Rigidbody>();
+        rigid = GetComponent<Rigidbody>(); 
+    }
+
+    private void Start()
+    {
+        Destroy(gameObject, 1f);
     }
 
     private void Update()
     {
-        rigid.velocity = transform.forward * speed * Time.deltaTime;
-        Destroy(gameObject, 1f);
+        rigid.AddRelativeForce(Vector3.forward * speed * Time.deltaTime);
     }
 }

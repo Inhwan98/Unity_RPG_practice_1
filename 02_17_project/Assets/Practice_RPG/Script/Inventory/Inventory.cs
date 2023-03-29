@@ -9,6 +9,16 @@ public class Inventory : MonoBehaviour
     public delegate void OnSlotCountChange(int val); //대리자 정의
     public OnSlotCountChange onSlotCountChange; //대리자 인스턴스화
 
+    private bool IsUseInven;
+    public bool isUseInven
+    {
+        get => IsUseInven;
+        set
+        {
+            IsUseInven = value;
+        }
+    }
+
     private int slotCnt; //slot 사이즈 정할 변수
     public int SlotCnt
     {

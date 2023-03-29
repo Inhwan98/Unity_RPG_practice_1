@@ -145,20 +145,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        runtime += Time.deltaTime;
+        if(!inven.isUseInven)
+        {
+            runtime += Time.deltaTime;
 
-        GetInput();
-        Move();
-        Turn();
+            GetInput();
+            Move();
+            Turn();
 
-        AimSwap();
-        StartCoroutine(Slide());
-        StartCoroutine(Jump());
-        StartCoroutine(Attack(0.6f));
-        StartCoroutine(ChangeAttack(0.6f));
+            AimSwap();
+            StartCoroutine(Slide());
+            StartCoroutine(Jump());
+            StartCoroutine(Attack(0.6f));
+            StartCoroutine(ChangeAttack(0.6f));
 
-        RotateTo(xMouse, yMouse);
-    }
+            RotateTo(xMouse, yMouse);
+        }
+      }
 
 
 
@@ -395,8 +398,7 @@ public class Player : MonoBehaviour
                 hitPoints.value = curHitPoints;
             }
         }
-
-        if (other.tag == "BossFire")
+        else if (other.tag == "BossFire")
         {
             Fireball boss = other.GetComponentInParent<Fireball>();
             Debug.Log("BossFire");
@@ -455,7 +457,8 @@ public class Player : MonoBehaviour
     {
         if (hitPoints.value < maxHitPoints)
         {
-            hitPoints.value += amount;
+            curHitPoints += amount;
+            hitPoints.value = curHitPoints;
             print("adjusthitPoints hitpoints by:" + amount + ". new value: " + hitPoints.value);
             return true;
         }
@@ -470,8 +473,6 @@ public class Player : MonoBehaviour
             isTakeDamage = true;
             SoundManager.instance.SFXPlay(TakeDamageClip.name, TakeDamageClip);
             yield return new WaitForSeconds(0.5f);
-
-
             isTakeDamage = false;
         }
         else if (isSwing)

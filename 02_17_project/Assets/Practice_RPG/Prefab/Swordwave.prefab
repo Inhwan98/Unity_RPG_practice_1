@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12843a6192879a24f91921a27138a25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2000
+  speed: 3000
   waveDamage: 0
   waveRate: 0
 --- !u!54 &3120612038749669805

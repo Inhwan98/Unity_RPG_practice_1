@@ -159,7 +159,7 @@ public class BossEnemy : MonoBehaviour
             fire.transform.LookAt(firetarget);
 
             firewave = fire.GetComponent<Fireball>();
-            firewave.fireDamage = this.damage * 1.4f;
+            firewave.fireDamage = this.damage * 1.3f;
 
             firetime = Random.Range(2, 4);
             delayTime = 0.0f;
